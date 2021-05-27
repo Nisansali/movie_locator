@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  theme:
-    ThemeData(primaryColor: Colors.blueGrey, accentColor: Colors.white),
-  debugShowCheckedModeBanner: false,
-  home: SplashScreen(),
-));
+// void main() => runApp(MaterialApp(
+//   theme:
+//     ThemeData(primaryColor: Colors.blueGrey, accentColor: Colors.white),
+//   debugShowCheckedModeBanner: false,
+//   home: SplashScreen(),
+// ));
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key key}) : super(key: key);
+  // const SplashScreen({Key key}) : super(key: key);
 
   @override
   _SplashScreenState createState() => _SplashScreenState();

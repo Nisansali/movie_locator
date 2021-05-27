@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/Movie_List.dart';
 
+import 'registration_page.dart';
+import 'splash_screen.dart';
+import 'splash_screen.dart';
 
-void main() {
-  runApp(MyApp());
-
-}
-
-class MyApp extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -102,12 +101,13 @@ class MyApp extends StatelessWidget {
                       primary: Colors.blueGrey, // background
                       onPrimary: Colors.white, // foreground
                     ),
-                    onPressed: () { },
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListScreen()));
+                    },
                     child: Text('Login',
                       style: TextStyle(fontSize: 20),),
                   )
                 ),
-
               ],
             )),
       ),
