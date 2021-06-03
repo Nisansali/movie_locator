@@ -24,10 +24,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
+  url_launcher: ^5.7.5
 flutter:
 
 
@@ -39,6 +41,10 @@ flutter:
     - images/movie.png
     - images/previous.png
     - images/filter.png
+    - images/mc.jpg
+    - images/savoy.jpg
+    - images/ccc.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
