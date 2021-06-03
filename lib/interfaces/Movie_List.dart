@@ -2,6 +2,7 @@ import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
+import 'package:movie_locator/interfaces/more_details_screen.dart';
 
 class MovieListScreen extends StatefulWidget {
   @override
@@ -76,14 +77,10 @@ class _MovieListScreenState extends State<MovieListScreen>{
               ),
               Container(
                 alignment: Alignment.center,
-                // padding: const EdgeInsets.all(4.0),
-                height: 150,
+                height: 160,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(40.0),
-                      bottomRight: Radius.circular(40.0),
-                      topLeft: Radius.circular(40.0),
-                      bottomLeft: Radius.circular(40.0)),
+                  borderRadius: BorderRadius.circular(40.0),
+                  border: Border.all(color: Colors.blueAccent),
                   color: Colors.black,
                 ),
                 child: Row(
@@ -93,20 +90,20 @@ class _MovieListScreenState extends State<MovieListScreen>{
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: 100.0,
-                          height: 150.0,
-                          padding: const EdgeInsets.all(5.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                            color: Colors.black,
-                          ),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(25),
-                              child: Image.asset(
-                                'images/Avengers.jpg',
-                                fit: BoxFit.fitWidth,
-                                width: double.infinity,
-                              ))
+                            width: 100.0,
+                            height: 150.0,
+                            padding: const EdgeInsets.all(5.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.black,
+                            ),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(25),
+                                child: Image.asset(
+                                  'images/Avengers.jpg',
+                                  fit: BoxFit.fitWidth,
+                                  width: double.infinity,
+                                ))
                         ),
                       ],
                     ),
@@ -126,7 +123,7 @@ class _MovieListScreenState extends State<MovieListScreen>{
                           ],
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
                               'Movie Description',
@@ -192,7 +189,7 @@ class _MovieListScreenState extends State<MovieListScreen>{
                           ],
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             SizedBox(
                               width: 70.0,
@@ -250,21 +247,44 @@ class _MovieListScreenState extends State<MovieListScreen>{
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                            width: 80.0,
-                            height: 100.0,
-                            padding: const EdgeInsets.all(5.0),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.black,
+                        Row(
+                          children: [
+                            Container(
+                                width: 80.0,
+                                height: 100.0,
+                                padding: const EdgeInsets.all(5.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                  color: Colors.black,
+                                ),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(25),
+                                    child: Image.asset(
+                                      'images/gps.png',
+                                      fit: BoxFit.fitWidth,
+                                      width: double.infinity,
+                                    ))
                             ),
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(25),
-                                child: Image.asset(
-                                  'images/gps.png',
-                                  fit: BoxFit.fitWidth,
-                                  width: double.infinity,
-                                ))
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            FlatButton(
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => MoredetailsScreen()));
+                              },
+                              child: Text('More Details', style: TextStyle(
+                                  color: Colors.blueAccent,
+                              )
+                              ),
+                              textColor: Colors.white,
+                              shape: RoundedRectangleBorder(side: BorderSide(
+                                  color: Colors.blue,
+                                  width: 1,
+                                  style: BorderStyle.solid
+                              ), borderRadius: BorderRadius.circular(50)),
+                            )
+                          ],
                         ),
                       ],
                     ),
@@ -273,7 +293,6 @@ class _MovieListScreenState extends State<MovieListScreen>{
               ),
             ],
           )
-
         ],
       ),
     );

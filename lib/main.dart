@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Game for the children with ADHD ',
+      title: 'Movie Locator',
       theme: ThemeData(
         // This is the theme of your application.
         //
