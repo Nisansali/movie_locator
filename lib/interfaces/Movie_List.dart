@@ -2,7 +2,7 @@ import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
-import 'package:movie_locator/interfaces/more_details_screen.dart';
+import 'package:movie_locator/interfaces/Movie%20details/more_details_screen.dart';
 
 class MovieListScreen extends StatefulWidget {
   @override
@@ -277,9 +277,9 @@ class _MovieListScreenState extends State<MovieListScreen>{
                                   color: Colors.blueAccent,
                               )
                               ),
-                              textColor: Colors.white,
+                              textColor: Colors.blueAccent,
                               shape: RoundedRectangleBorder(side: BorderSide(
-                                  color: Colors.blue,
+                                  color: Colors.blueAccent,
                                   width: 1,
                                   style: BorderStyle.solid
                               ), borderRadius: BorderRadius.circular(50)),
