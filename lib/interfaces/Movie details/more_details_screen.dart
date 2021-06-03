@@ -21,7 +21,7 @@ class _MoredetailsScreenState extends State<MoredetailsScreen>{
             children: [
 
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleAvatar(
                     radius: 25.0,

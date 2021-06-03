@@ -20,7 +20,7 @@ class _MovieListScreenState extends State<MovieListScreen>{
           ListView(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CircleAvatar(
                     radius: 25.0,
