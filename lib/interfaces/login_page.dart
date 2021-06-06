@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/DateTimeScreen.dart';
 import 'package:movie_locator/interfaces/Movie_List.dart';
 
 import 'registration_page.dart';
@@ -102,7 +103,7 @@ class LoginPage extends StatelessWidget {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DateTimeScreen()));
                     },
                     child: Text('Login',
                       style: TextStyle(fontSize: 20),),

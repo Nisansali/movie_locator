@@ -73,7 +73,7 @@ class _MovieListScreenState extends State<MovieListScreen>{
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 10.0,
               ),
               Container(
                 alignment: Alignment.center,
