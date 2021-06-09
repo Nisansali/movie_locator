@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/Movie_List.dart';
+import 'package:movie_locator/interfaces/registration_page.dart';
 
 import 'interfaces/login_page.dart';
 import 'interfaces/movie_locations.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: RegistrationPage(),
     );
   }
 }
