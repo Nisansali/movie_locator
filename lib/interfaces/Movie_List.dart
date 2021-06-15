@@ -18,10 +18,10 @@ class _MovieListScreenState extends State<MovieListScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.blueGrey.shade900,
       body: Stack(
         children: [
-
           ListView(
             scrollDirection: Axis.vertical,
             children: [

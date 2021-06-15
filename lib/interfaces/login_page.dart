@@ -15,6 +15,7 @@ class LoginPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.blueGrey.shade900,
         body: SafeArea(
             child: Column(
@@ -121,7 +122,7 @@ class LoginPage extends StatelessWidget {
                   )
                 ),
                 Container(
-                    padding: EdgeInsets.all(10),
+
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: Colors.transparent, // background
