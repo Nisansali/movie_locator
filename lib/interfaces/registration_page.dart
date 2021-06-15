@@ -4,13 +4,8 @@ import 'package:movie_locator/interfaces/login_page.dart';
 
 import '../addMovie.dart';
 
-
-// void main() {
-//   runApp(MyApp());
-//
-// }
-
 class RegistrationPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -73,32 +73,6 @@ class _F9DetailsScreenState extends State<F9DetailsScreen>{
                       child: F9Storyline(),
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FlatButton(
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => DateTimeScreen()));
-                            },
-                            child: Text('show time'.toUpperCase(), style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold
-                            )
-                            ),
-                            textColor: Colors.blue,
-                            shape: RoundedRectangleBorder(side: BorderSide(
-                                color: Colors.blue,
-                                width: 2,
-                                style: BorderStyle.solid
-                            ), borderRadius: BorderRadius.circular(50)),
-                          )
-                        ],
-                      ),
-                    ),
-
                   ],
                 ),
               ),

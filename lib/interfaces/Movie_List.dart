@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flappy_search_bar/search_bar_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,7 @@ class MovieListScreen extends StatefulWidget {
 }
 
 class _MovieListScreenState extends State<MovieListScreen>{
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
