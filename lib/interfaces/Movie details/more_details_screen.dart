@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/DateTimeScreen.dart';
 import 'package:movie_locator/interfaces/Movie%20details/movie_details_header.dart';
 import 'package:movie_locator/interfaces/Movie%20details/storyline.dart';
 import 'package:movie_locator/interfaces/Movie_List.dart';
@@ -67,6 +68,32 @@ class _MoredetailsScreenState extends State<MoredetailsScreen>{
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Storyline(),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => DateTimeScreen()));
+                            },
+                            child: Text('show time'.toUpperCase(), style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold
+                            )
+                            ),
+                            textColor: Colors.blue,
+                            shape: RoundedRectangleBorder(side: BorderSide(
+                                color: Colors.blue,
+                                width: 2,
+                                style: BorderStyle.solid
+                            ), borderRadius: BorderRadius.circular(50)),
+                          )
+                        ],
+                      ),
                     ),
 
                   ],

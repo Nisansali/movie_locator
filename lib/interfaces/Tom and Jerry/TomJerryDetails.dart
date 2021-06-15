@@ -4,6 +4,8 @@ import 'package:movie_locator/interfaces/Movie_List.dart';
 import 'package:movie_locator/interfaces/Tom and Jerry/TomJerryHeader.dart';
 import 'package:movie_locator/interfaces/Tom and Jerry/TomJerryStoryline.dart';
 
+import '../DateTimeScreen.dart';
+
 class TomandJerryDetailsScreen extends StatefulWidget {
   @override
   _TomandJerryDetailsScreenState createState() => _TomandJerryDetailsScreenState();
@@ -67,6 +69,32 @@ class _TomandJerryDetailsScreenState extends State<TomandJerryDetailsScreen>{
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: TomJerryStoryline(),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => DateTimeScreen()));
+                            },
+                            child: Text('show time'.toUpperCase(), style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
+                            )
+                            ),
+                            textColor: Colors.blue,
+                            shape: RoundedRectangleBorder(side: BorderSide(
+                                color: Colors.blue,
+                                width: 2,
+                                style: BorderStyle.solid
+                            ), borderRadius: BorderRadius.circular(50)),
+                          )
+                        ],
+                      ),
                     ),
 
                   ],

@@ -55,29 +55,8 @@ class _MovieListScreenState extends State<MovieListScreen>{
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height / 8,
-                    width: MediaQuery.of(context).size.width,
-                    alignment: Alignment.topCenter,
-                    padding: EdgeInsets.fromLTRB(
-                        MediaQuery.of(context).size.width / 12,
-                        MediaQuery.of(context).size.height / 80,
-                        MediaQuery.of(context).size.width / 12,
-                        0),
-                    child: SearchBar(
-                      searchBarStyle: SearchBarStyle(
-                        borderRadius: BorderRadius.circular(56),
-                        backgroundColor: Colors.white,
-                      ),
-                    ),
-                  )
-                ],
-              ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
                 width: 20.0,
                 child: Divider(
                   color: Colors.teal.shade100,
