@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/login_page.dart';
+
+import '../addMovie.dart';
 
 
 // void main() {
@@ -11,6 +14,7 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueGrey.shade900,
         body: SafeArea(
@@ -102,9 +106,25 @@ class RegistrationPage extends StatelessWidget {
                         primary: Colors.blueGrey, // background
                         onPrimary: Colors.white, // foreground
                       ),
-                      onPressed: () { },
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MovieAdd()));
+                      },
                       child: Text('Register',
                         style: TextStyle(fontSize: 20),),
+                    )
+                ),
+                Container(
+                    padding: EdgeInsets.all(10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent, // background
+                        onPrimary: Colors.white, // foreground
+                      ),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                      },
+                      child: Text('Already a member ? Login Here',
+                        style: TextStyle(fontSize: 15 , backgroundColor: Colors.transparent), ),
                     )
                 ),
 

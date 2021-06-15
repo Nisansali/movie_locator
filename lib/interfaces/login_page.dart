@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_locator/interfaces/DateTimeScreen.dart';
-import 'package:movie_locator/interfaces/Movie_List.dart';
+import 'package:movie_locator/interfaces/registration_page.dart';
 
 import '../addMovie.dart';
-import 'registration_page.dart';
-import 'splash_screen.dart';
-import 'splash_screen.dart';
+
 
 class LoginPage extends StatelessWidget {
   @override
@@ -110,6 +107,20 @@ class LoginPage extends StatelessWidget {
                     child: Text('Login',
                       style: TextStyle(fontSize: 20),),
                   )
+                ),
+                Container(
+                    padding: EdgeInsets.all(10),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent, // background
+                        onPrimary: Colors.white, // foreground
+                      ),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
+                      },
+                      child: Text('Not a member ? Register Here',
+                        style: TextStyle(fontSize: 15 , backgroundColor: Colors.transparent), ),
+                    )
                 ),
               ],
             )),
