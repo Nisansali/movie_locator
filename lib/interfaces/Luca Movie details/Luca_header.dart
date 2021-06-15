@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_locator/interfaces/Movie%20details/imageArcBanner.dart';
+import 'package:movie_locator/interfaces/Luca Movie details/LucaArcBanner.dart';
 import 'package:movie_locator/interfaces/Movie%20details/poster.dart';
 
-class MovieDetailsHeader extends StatelessWidget {
+class LucaHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class MovieDetailsHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Avengers Endgame'.toUpperCase(),
+          'Luca'.toUpperCase(),
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -31,7 +31,7 @@ class MovieDetailsHeader extends StatelessWidget {
               width: 10,
             ),
             Text(
-              '8.5/10 IMDB',
+              '9/10 IMDB',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
@@ -49,7 +49,7 @@ class MovieDetailsHeader extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(bottom: 140.0),
-          child: ImageArcBanner(),
+          child: LucaArcBanner(),
         ),
         Positioned(
           bottom: 40.0,
@@ -60,7 +60,7 @@ class MovieDetailsHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Poster(
-                'images/Avengers.jpg'
+                  'images/luca.png'
               ),
               SizedBox(width: 16.0),
               Expanded(child: movieInformation),

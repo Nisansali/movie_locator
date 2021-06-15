@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Storyline extends StatelessWidget {
+class TomJerryStoryline extends StatelessWidget {
   // Storyline(this.storyline);
   // final String storyline;
 
@@ -16,15 +16,15 @@ class Storyline extends StatelessWidget {
         Text(
           'Story line',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontFamily: 'Source Sans Pro',
-            fontWeight: FontWeight.bold
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Source Sans Pro',
+              fontWeight: FontWeight.bold
           ),
         ),
         SizedBox(height: 8.0),
         Text(
-          'Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.',
+          'A legendary rivalry reemerges when Jerry moves into New York City''s finest hotel on the eve of the wedding of the century, forcing the desperate event planner to hire Tom to get rid of him. As mayhem ensues, the escalating cat-and-mouse battle soon threatens to destroy her career, the wedding, and possibly the hotel itself.',
           style: TextStyle(
             color: Colors.grey,
             fontSize: 16.0,

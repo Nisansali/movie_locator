@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'Movie_List.dart';
+
 class MovieLocations extends StatefulWidget {
   @override
   _MovieLocationScreenState createState() => _MovieLocationScreenState();
@@ -29,6 +31,11 @@ class _MovieLocationScreenState extends State<MovieLocations>{
                     radius: 25.0,
                     backgroundImage: AssetImage('images/previous.png'),
                     backgroundColor: Colors.white,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListScreen()));
+                      },
+                    ),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
@@ -187,7 +194,7 @@ class _MovieLocationScreenState extends State<MovieLocations>{
                             color: Colors.blueGrey.shade200,
                           ),
                           child: Image.asset(
-                              'images/ccc.ppg',
+                              'images/ccc.png',
                               height: 500,
                               width: 200,
                               fit: BoxFit.fitWidth

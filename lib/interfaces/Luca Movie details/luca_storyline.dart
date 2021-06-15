@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Storyline extends StatelessWidget {
+class LucaStoryline extends StatelessWidget {
   // Storyline(this.storyline);
   // final String storyline;
 
@@ -16,15 +16,15 @@ class Storyline extends StatelessWidget {
         Text(
           'Story line',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontFamily: 'Source Sans Pro',
-            fontWeight: FontWeight.bold
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Source Sans Pro',
+              fontWeight: FontWeight.bold
           ),
         ),
         SizedBox(height: 8.0),
         Text(
-          'Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.',
+          'Set in a beautiful seaside town on the Italian Riviera, the original animated feature is a coming-of-age story about one young boy experiencing an unforgettable summer filled with gelato, pasta and endless scooter rides. Luca shares these adventures with his newfound best friend, but all the fun is threatened by a deeply-held secret: he is a sea monster from another world just below the waters surface.',
           style: TextStyle(
             color: Colors.grey,
             fontSize: 16.0,

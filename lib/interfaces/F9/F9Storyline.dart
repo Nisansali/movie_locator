@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Storyline extends StatelessWidget {
+class F9Storyline extends StatelessWidget {
   // Storyline(this.storyline);
   // final String storyline;
 
@@ -16,15 +16,15 @@ class Storyline extends StatelessWidget {
         Text(
           'Story line',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontFamily: 'Source Sans Pro',
-            fontWeight: FontWeight.bold
+              color: Colors.white,
+              fontSize: 20,
+              fontFamily: 'Source Sans Pro',
+              fontWeight: FontWeight.bold
           ),
         ),
         SizedBox(height: 8.0),
         Text(
-          'Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic showdown with Thanos -- the evil demigod who decimated the planet and the universe.',
+          'Dom Toretto is living the quiet life off the grid with Letty and his son, but they know that danger always lurks just over the peaceful horizon. This time, that threat forces Dom to confront the sins of his past to save those he loves most. His crew soon comes together to stop a world-shattering plot by the most skilled assassin and high-performance driver they have ever encountered -- Dom''s forsaken brother.',
           style: TextStyle(
             color: Colors.grey,
             fontSize: 16.0,

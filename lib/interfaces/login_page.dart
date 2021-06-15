@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_locator/interfaces/Movie_List.dart';
 import 'package:movie_locator/interfaces/registration_page.dart';
 
 import '../addMovie.dart';
 
-
 class LoginPage extends StatelessWidget {
+
+  TextEditingController usernameController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,6 +57,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: TextField(
                     style: TextStyle(fontSize: 18),
+                    controller: usernameController,
                     decoration: InputDecoration(
                       hintText: "username",
                       hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
@@ -78,6 +83,7 @@ class LoginPage extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     style: TextStyle(fontSize: 15),
+                    controller: passwordController,
                     decoration: InputDecoration(
                       hintText: "password",
                       hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
@@ -102,7 +108,13 @@ class LoginPage extends StatelessWidget {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieAdd()));
+                      if ( usernameController.text == 'admin' && passwordController.text == 'admin') {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MovieAdd()));
+                      } else if (usernameController.text == '' && passwordController.text == ''){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                      } else {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListScreen()));
+                      }
                     },
                     child: Text('Login',
                       style: TextStyle(fontSize: 20),),
