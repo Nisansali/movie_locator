@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -119,11 +121,12 @@ class _MovieFirebaseDemoState extends State<MovieFirebaseDemo> {
 
     return Padding(
       key:ValueKey(movie.movieName),
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 2),
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 2),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.blueGrey),
-          borderRadius: BorderRadius.circular(4)
+          color: Colors.black87,
+          border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(10)
         ),
         child: SingleChildScrollView(
           child: ListTile(
@@ -132,22 +135,22 @@ class _MovieFirebaseDemoState extends State<MovieFirebaseDemo> {
                 Row(
                 children:<Widget>[
                   Padding(padding: EdgeInsets.symmetric(vertical: 15, horizontal: 2),),
-                  Icon(Icons.movie, color: Colors.blueAccent,),
-                  Text(movie.movieName)
+                  Icon(Icons.movie, color: Colors.green,),
+                  Text('  ' + movie.movieName, style: TextStyle(color: Colors.white),)
               ],
             ),
                 Divider(),
                 Row(
                   children: <Widget>[
                     Padding(padding: EdgeInsets.symmetric(vertical: 15, horizontal: 2),),
-                    Icon(Icons.place_outlined, color: Colors.amberAccent,),
-                    Text(movie.location)
+                    Icon(Icons.place_outlined, color: Colors.blueAccent,),
+                    Text("  "+movie.location,style: TextStyle(color: Colors.white),)
                   ],
                 ),
           ],
         ),
             trailing: IconButton(
-              icon: Icon(Icons.delete, color: Colors.redAccent,),
+              icon: Icon(Icons.delete, color: Colors.red.shade900,),
               onPressed: (){
                 deleteMovie(movie);
               },
@@ -176,13 +179,14 @@ class _MovieFirebaseDemoState extends State<MovieFirebaseDemo> {
   button(){
     return SizedBox(
         width: double.infinity,
-
+        height: 50,
         child: OutlinedButton(
           style: OutlinedButton.styleFrom(
             backgroundColor: Colors.blueGrey,
           ),
           child: Text(isEditing ? "UPDATE" : "ADD",style: TextStyle(
             color: Colors.white,
+            fontSize: 18,
           ),),
           onPressed: (){
             if(isEditing == true){
@@ -208,102 +212,116 @@ class _MovieFirebaseDemoState extends State<MovieFirebaseDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.indigo.shade50,
-      resizeToAvoidBottomInset: false,
-
-      appBar: AppBar(
-          backgroundColor: Colors.indigo,
-
-        title: Text(widget.appTitle),
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.add),
-              onPressed: (){
-                setState(() {
-                  textFieldVisibility = !textFieldVisibility;
-                });
-              })
-        ]
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/back.jpg"), fit: BoxFit.cover
+        )
       ),
-      body:Container(
-        padding: EdgeInsets.all(19),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            textFieldVisibility
-            ? Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Column(
-                  children: [
-                    TextField(
-                      controller: movieNameController,
-                      style: TextStyle(fontSize: 18),
-                      decoration: InputDecoration(
-                        hintText: "Movie name",
-                        hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                        prefixIcon: const Icon(
-                          Icons.movie,
-                          color: Colors.blueGrey,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    TextField(
-                      controller: locationController,
-                      style: TextStyle(fontSize: 18),
-                      decoration: InputDecoration(
-                        hintText: "Location",
-                        hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                        prefixIcon: const Icon(
-                          Icons.place,
-                          color: Colors.blueGrey,
-                          size: 30,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                button()
-              ],
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        resizeToAvoidBottomInset: false,
 
-            ): Container(),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'Movies',
-              style: TextStyle(
-                fontFamily: 'Pattaya',
-                fontSize: 35,
-                color: Colors.indigo,
+        appBar: AppBar(
+            backgroundColor: Colors.black,
+          title: Text(widget.appTitle, style: TextStyle(fontFamily: 'Pattaya',),),
+          actions: <Widget>[
+            IconButton(
+                icon: Icon(Icons.add),
+                onPressed: (){
+                  setState(() {
+                    textFieldVisibility = !textFieldVisibility;
+                  });
+                })
+          ]
+        ),
+        body:Container(
+          padding: EdgeInsets.all(19),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              textFieldVisibility
+              ? Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: TextField(
+                          controller: movieNameController,
+                          style: TextStyle(fontSize: 18 ),
+                          decoration: InputDecoration(
+                            hintText: "Movie name",
+                            hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.blueGrey,
+                              ),
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.movie,
+                              color: Colors.blueGrey,
+                              size: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: TextField(
+                          controller: locationController,
+                          style: TextStyle(fontSize: 18),
+                          decoration: InputDecoration(
+                            hintText: "Location",
+                            hintStyle: TextStyle(fontSize: 18, color: Colors.blueGrey.shade900),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.blueGrey,
+                              ),
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.place,
+                              color: Colors.blueGrey,
+                              size: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  button()
+                ],
+
+              ): Container(),
+              SizedBox(
+                height: 20,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Flexible(child: buildBody(context))
+              Text(
+                'Movie List',
+                style: TextStyle(
+                  fontFamily: 'Pattaya',
+                  fontSize: 40,
+                  color: Colors.red,
+                  backgroundColor: Colors.black54,
+                  letterSpacing: 1,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Flexible(child: buildBody(context))
 
-          ],
+            ],
+          ),
         ),
       ),
     );

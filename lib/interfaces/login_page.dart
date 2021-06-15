@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_locator/interfaces/DateTimeScreen.dart';
 import 'package:movie_locator/interfaces/Movie_List.dart';
 
+import '../addMovie.dart';
 import 'registration_page.dart';
 import 'splash_screen.dart';
 import 'splash_screen.dart';
@@ -11,6 +12,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueGrey.shade900,
         body: SafeArea(
@@ -103,7 +105,7 @@ class LoginPage extends StatelessWidget {
                       onPrimary: Colors.white, // foreground
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DateTimeScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MovieAdd()));
                     },
                     child: Text('Login',
                       style: TextStyle(fontSize: 20),),
